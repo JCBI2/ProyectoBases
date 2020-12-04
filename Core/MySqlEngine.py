@@ -30,7 +30,8 @@ class MySqlEngine:
         return True
 
     def delete(self, id):
-        pass
+        self.link.execute(query)
+        self.con.commit()
     
     def update(self, obj):
         pass
