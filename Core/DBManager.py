@@ -30,6 +30,16 @@ class DBManager:
             print("Si se agrego")
         except:
             print("No se agrego")
+            
+    def delete(self,userName):
+        try:
+            deleteUser = " DELETE FROM user WHERE fk_var_user_name = '%s' "%(userName)
+            self.engine.delete(deleteUser)
+            deleteFullName = "DELETE FROM fullname WHERE var_user_name = '%s'"%(userName)
+            self.engine.delete(deleteFullName)
+            print("Si elimino")
+        except:
+            print("No elimno")
     
     def getUsers(self):
         query =  "SELECT * FROM User;"
